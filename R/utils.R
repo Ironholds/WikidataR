@@ -6,6 +6,7 @@ wd_query <- function(title, ...){
                          ...)
   result <- result$parse$wikitext[[1]]
   result <- fromJSON(result)
+  return(result)
 }
 
 check_input <- function(input, substitution){

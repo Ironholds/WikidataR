@@ -5,7 +5,7 @@
 \alias{get_property}
 \title{Retrieve specific Wikidata items or properties}
 \usage{
-get_item(item)
+get_item(id, random = FALSE, ...)
 
 get_property(id, random = FALSE, ...)
 }

@@ -1,5 +1,4 @@
-#'@importFrom WikipediR page_content
-#'@importFrom httr user_agent
+#Generic queryin' function. Wraps around page_content.
 wd_query <- function(title, ...){
   result <- page_content(domain = "wikidata.org", page = title, as_wikitext = TRUE,
                          user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),

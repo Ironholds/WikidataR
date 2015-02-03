@@ -1,10 +1,14 @@
 Package: WikidataR
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: API client library for Wikidata
+Version: 0.0.5
 Date: 2015-02-01
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Oliver Keyes
+Maintainer: Oliver Keyes <ironholds@gmail.com>
+Description: A wrapper around the WikipediR MediaWiki API client library aimed
+  at Wikidata - the semantic store of metadata.
+License: MIT + file LICENSE
+Imports:
+  httr,
+  WikipediR
 Suggests: testthat

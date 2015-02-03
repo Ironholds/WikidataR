@@ -10,5 +10,6 @@ Description: A wrapper around the WikipediR MediaWiki API client library aimed
 License: MIT + file LICENSE
 Imports:
   httr,
+  jsonlite,
   WikipediR
 Suggests: testthat

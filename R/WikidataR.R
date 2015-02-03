@@ -5,7 +5,8 @@
 #'\code{\link{get_item}} for a /specific/ item or property, or \code{\link{find_item}}
 #'for using search functionality to pull out item or property IDs where the descriptions
 #'or aliases match a particular search term.
-#' @importFrom WikipediR page_content
+#' @importFrom WikipediR page_content random_page query
 #' @importFrom httr user_agent
+#' @importFrom jsonlite fromJSON
 #' @aliases WikidataR WikidataR-package
 NULL

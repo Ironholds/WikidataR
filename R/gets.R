@@ -17,14 +17,14 @@
 #'@aliases get_item get_property
 #'@rdname get_item
 #'@export
-get_item <- function(id, random = FALSE, ...){
+get_item <- function(id, ...){
   id <- check_input(id, "Q")
   return(wd_query(id, ...))
 }
 
 #'@rdname get_item
 #'@export
-get_property <- function(id, random = FALSE, ...){
+get_property <- function(id, ...){
   if(grepl("^P(?!r)",id, perl = TRUE)){
     id <- paste0("Property:",id)
   }
@@ -36,7 +36,7 @@ get_property <- function(id, random = FALSE, ...){
 #'@description \code{get_random_item} and \code{get_random_property} allow you to retrieve the data
 #'associated with randomly-selected Wikidata items and properties, respectively.
 #'
-#'@param arguments to pass to httr's GET.
+#'@param ... arguments to pass to httr's GET.
 #'
 #'@seealso \code{\link{get_item}} for selecting a specific item or property,
 #'or \code{\link{find_item}} for using search functionality to pull out
@@ -80,6 +80,7 @@ find_item <- function(search_term, language = "en", limit = 10, ...){
   return(searcher(search_term, language, limit, "item"))
 }
 
+#'@rdname find_item
 #'@export
 find_property <- function(search_term, language = "en", limit = 10){
   return(searcher(search_term, language, limit, "property"))

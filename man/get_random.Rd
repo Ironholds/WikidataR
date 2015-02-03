@@ -11,7 +11,7 @@ get_random_item(...)
 get_random_property(...)
 }
 \arguments{
-\item{arguments}{to pass to httr's GET.}
+\item{...}{arguments to pass to httr's GET.}
 }
 \description{
 \code{get_random_item} and \code{get_random_property} allow you to retrieve the data

@@ -5,9 +5,9 @@
 \alias{get_property}
 \title{Retrieve specific Wikidata items or properties}
 \usage{
-get_item(id, random = FALSE, ...)
+get_item(id, ...)
 
-get_property(id, random = FALSE, ...)
+get_property(id, ...)
 }
 \arguments{
 \item{id}{the ID number of the item or property you're looking for. This can be in

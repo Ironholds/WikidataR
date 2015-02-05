@@ -8,8 +8,10 @@ Maintainer: Oliver Keyes <ironholds@gmail.com>
 Description: A wrapper around the WikipediR MediaWiki API client library aimed
   at Wikidata - the semantic store of metadata.
 License: MIT + file LICENSE
-Imports:
+Imports: 
   httr,
   jsonlite,
   WikipediR
-Suggests: testthat
+Suggests: testthat,
+    knitr
+VignetteBuilder: knitr

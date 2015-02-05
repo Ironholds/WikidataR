@@ -9,8 +9,9 @@ __Status:__ In development
 
 Description
 ======
-WikidataR is a wrapper around the Wikidata API. It is written in and for R, a statistical environment and associated programming language in heavy use by HCI researchers that previously lacked such a wrapper. For details on how
-to best use it, see the explanatory vignette.
+WikidataR is a wrapper around the Wikidata API. It is written in and for R, and was inspired by Christian Graul's
+[rwikidata](https://github.com/chgrl/rwikidata) project. For details on how to best use it, see the [explanatory
+vignette](https://github.com/Ironholds/WikidataR/blob/master/vignettes/Introduction.Rmd).
 
 Installation
 ======

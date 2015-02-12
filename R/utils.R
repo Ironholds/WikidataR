@@ -42,5 +42,5 @@ magnus_query <- function(url, ...){
   url <- paste0("http://wdq.wmflabs.org/api?q=", url)
   result <- GET(url, user_agent("WikidataR - https://github.com/Ironholds/WikidataR"), ...)
   stop_for_status(result)
-  return(content(result, as = "application/json"))
+  return(content(result, type = "application/json"))
 }

@@ -1,4 +1,4 @@
-context("Get functions")
+context("Search functions")
 
 test_that("English-language search works",{
   expect_true({find_item("Wonder Girls", "en");TRUE})

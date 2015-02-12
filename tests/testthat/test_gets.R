@@ -1,4 +1,4 @@
-context("Get functions")
+context("Direct Wikidata get functions")
 
 test_that("A specific item can be retrieved with an entire item code", {
   expect_true({get_item("Q100");TRUE})

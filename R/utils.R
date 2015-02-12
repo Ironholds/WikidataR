@@ -1,4 +1,4 @@
-#Generic queryin' function. Wraps around page_content.
+#Generic queryin' function for direct Wikidata calls. Wraps around WikipediR::page_content.
 wd_query <- function(title, ...){
   result <- page_content(domain = "wikidata.org", page = title, as_wikitext = TRUE,
                          user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
@@ -28,11 +28,19 @@ check_input <- function(input, substitution){
   return(input)
 }
 
-#Generic searcher.
+#Generic, direct access to Wikidata's search functionality.
 searcher <- function(search_term, language, limit, type, ...){
   url <- paste0("wikidata.org/w/api.php?action=wbsearchentities&format=json&type=",type)
   url <- paste0(url, "&language=", language, "&limit=", limit, "&search=", search_term)
   result <- query(url, "list", FALSE, ...)
   result <- result$search
   return(result)
+}
+
+#Generic querying of Magnus's API service.
+magnus_query <- function(url, ...){
+  url <- paste0("http://wdq.wmflabs.org/api?q=", url)
+  result <- GET(url, user_agent("WikidataR - https://github.com/Ironholds/WikidataR"), ...)
+  stop_for_status(result)
+  return(content(result, as = "application/json"))
 }

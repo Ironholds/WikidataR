@@ -1,6 +1,6 @@
 #Generic queryin' function for direct Wikidata calls. Wraps around WikipediR::page_content.
 wd_query <- function(title, ...){
-  result <- page_content(domain = "wikidata.org", page = title, as_wikitext = TRUE,
+  result <- page_content(domain = "wikidata.org", page_name = title, as_wikitext = TRUE,
                          user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
                          ...)
   result <- result$parse$wikitext[[1]]

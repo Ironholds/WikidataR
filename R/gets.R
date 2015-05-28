@@ -19,7 +19,9 @@
 #'@export
 get_item <- function(id, ...){
   id <- check_input(id, "Q")
-  return(wd_query(id, ...))
+  res <- wd_query(id, ...)
+  class(res) <- "wditem"
+  return(res)
 }
 
 #'@rdname get_item
@@ -29,7 +31,9 @@ get_property <- function(id, ...){
     id <- paste0("Property:",id)
   }
   id <- check_input(id, "Property:P")
-  return(wd_query(id, ...))
+  res <- wd_query(id, ...)
+  class(res) <- "wdproperty"
+  return(res)
 }
 
 #'@title Retrieve randomly-selected Wikidata items or properties
@@ -47,13 +51,17 @@ get_property <- function(id, ...){
 #'@rdname get_random
 #'@export
 get_random_item <- function(...){
-  return(wd_rand_query(0, ...))
+  res <- wd_rand_query(0, ...)
+  class(res) <- "wditem"
+  return(res)
 }
 
 #'@rdname get_random
 #'@export
 get_random_property <- function(...){
-  return(wd_rand_query(120, ...))
+  res <- wd_rand_query(120, ...)
+  class(res) <- "wdproperty"
+  return(res)
 }
 
 #'@title Search for Wikidata items or properties that match a search term

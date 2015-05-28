@@ -51,3 +51,49 @@ print.find_property <- function(x, ...) {
     }
   }
 }
+
+#'@title Print method for Wikidata items
+#'
+#'@param x item object from get_item or get_random_item
+#'@param \dots Arguments to be passed to methods
+#'@method print wditem
+#'@export
+print.wditem <- function(x, ...) {
+  
+  cat("\n\tWikidata item", x$id, "\n\n")
+  	
+  # labels
+  num.labels <- length(x$labels)
+  if(num.labels>0) {
+    lbl <- x$labels[[1]]$value
+    if(num.labels==1) cat("Label:\t\t", lbl, "\n")
+    else {
+      if(!is.null(x$labels$en)) lbl <- x$labels$en$value
+      cat("Label:\t\t", lbl, paste0("\t[", num.labels-1, " other languages available]\n"))
+    }
+  }
+  
+  # aliases
+  num.alias <- length(x$aliases)
+  if(num.alias>0) {
+    al <- unique(unlist(lapply(x$aliases,function(xl) xl$value)))
+    cat("Aliases:\t", paste(al, collapse=", "), "\n")
+  }
+  
+  # description
+  num.desc <- length(x$descriptions)
+  if(num.desc>0) {
+    desc <- x$descriptions[[1]]$value
+    if(num.desc==1) cat("Description:", desc, "\n")
+    else {
+      if(!is.null(x$descriptions$en)) desc <- x$descriptions$en$value
+      cat("Description:", desc, paste0("\t[", num.desc-1, " other languages available]\n"))
+    }
+  }
+  	
+  # num claims
+  cat("Claims:\t\t", length(x$claims), "\n")
+
+  # num sitelinks
+  cat("Sitelinks:\t", length(x$sitelinks), "\n")
+}

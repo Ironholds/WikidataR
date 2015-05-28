@@ -2,6 +2,7 @@
 
 S3method(print,find_item)
 S3method(print,find_property)
+S3method(print,wditem)
 export(find_item)
 export(find_property)
 export(get_item)

@@ -20,7 +20,7 @@
 get_item <- function(id, ...){
   id <- check_input(id, "Q")
   res <- wd_query(id, ...)
-  class(res) <- "wditem"
+  class(res) <- "wikidata"
   return(res)
 }
 
@@ -32,7 +32,7 @@ get_property <- function(id, ...){
   }
   id <- check_input(id, "Property:P")
   res <- wd_query(id, ...)
-  class(res) <- "wdproperty"
+  class(res) <- "wikidata"
   return(res)
 }
 
@@ -52,7 +52,7 @@ get_property <- function(id, ...){
 #'@export
 get_random_item <- function(...){
   res <- wd_rand_query(0, ...)
-  class(res) <- "wditem"
+  class(res) <- "wikidata"
   return(res)
 }
 
@@ -60,7 +60,7 @@ get_random_item <- function(...){
 #'@export
 get_random_property <- function(...){
   res <- wd_rand_query(120, ...)
-  class(res) <- "wdproperty"
+  class(res) <- "wikidata"
   return(res)
 }
 

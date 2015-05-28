@@ -52,15 +52,16 @@ print.find_property <- function(x, ...) {
   }
 }
 
-#'@title Print method for Wikidata items
+#'@title Print method for Wikidata objects
 #'
-#'@param x item object from get_item or get_random_item
+#'@param x wikidata object from get_item, get_random_item, get_property or get_random_property
 #'@param \dots Arguments to be passed to methods
-#'@method print wditem
+#'@seealso get_item, get_random_item, get_property or get_random_property
+#'@method print wikidata
 #'@export
-print.wditem <- function(x, ...) {
+print.wikidata <- function(x, ...) {
   
-  cat("\n\tWikidata item", x$id, "\n\n")
+  cat("\n\tWikidata", x$type, x$id, "\n\n")
   	
   # labels
   num.labels <- length(x$labels)
@@ -80,7 +81,7 @@ print.wditem <- function(x, ...) {
     cat("Aliases:\t", paste(al, collapse=", "), "\n")
   }
   
-  # description
+  # descriptions
   num.desc <- length(x$descriptions)
   if(num.desc>0) {
     desc <- x$descriptions[[1]]$value
@@ -92,8 +93,10 @@ print.wditem <- function(x, ...) {
   }
   	
   # num claims
-  cat("Claims:\t\t", length(x$claims), "\n")
+  num.claims <- length(x$claims)
+  if(num.claims>0) cat("Claims:\t\t", num.claims, "\n")
 
   # num sitelinks
-  cat("Sitelinks:\t", length(x$sitelinks), "\n")
+  num.links <- length(x$sitelinks)
+  if(num.links>0) cat("Sitelinks:\t", num.links, "\n")
 }

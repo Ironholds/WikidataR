@@ -14,6 +14,14 @@
 #'item or property IDs where the descriptions or aliases match a particular
 #'search term.
 #'
+#'@examples
+#'
+#'#Retrieve a specific item
+#'adams_metadata <- get_item("42")
+#'
+#'#Retrieve a specific property
+#'object_is_child <- get_property("P40")
+#'
 #'@aliases get_item get_property
 #'@rdname get_item
 #'@export
@@ -42,6 +50,14 @@ get_property <- function(id, ...){
 #'or \code{\link{find_item}} for using search functionality to pull out
 #'item or property IDs where the descriptions or aliases match a particular
 #'search term.
+#'
+#'@examples
+#'
+#'#Random item
+#'random_item <- get_random_item()
+#'
+#'#Random property
+#'random_property <- get_random_property()
 #'
 #'@aliases get_random get_random_item get_random_property
 #'@rdname get_random
@@ -72,6 +88,14 @@ get_random_property <- function(...){
 #'
 #'@seealso \code{\link{get_random}} for selecting a random item or property,
 #'or \code{\link{get_item}} for selecting a specific item or property.
+#'
+#'@examples
+#'
+#'#Check for entries relating to Douglas Adams in some way
+#'adams_items <- find_item("Douglas Adams")
+#'
+#'#Check for properties involving the peerage
+#'peerage_props <- find_property("peerage")
 #'
 #'@aliases find_item find_property
 #'@rdname find_item

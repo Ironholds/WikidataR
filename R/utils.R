@@ -36,11 +36,3 @@ searcher <- function(search_term, language, limit, type, ...){
   result <- result$search
   return(result)
 }
-
-#Generic querying of Magnus's API service.
-magnus_query <- function(url, ...){
-  url <- paste0("http://wdq.wmflabs.org/api?q=", url)
-  result <- GET(url, user_agent("WikidataR - https://github.com/Ironholds/WikidataR"), ...)
-  stop_for_status(result)
-  return(content(result, type = "application/json"))
-}

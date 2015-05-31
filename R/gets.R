@@ -27,7 +27,9 @@
 #'@export
 get_item <- function(id, ...){
   id <- check_input(id, "Q")
-  return(wd_query(id, ...))
+  res <- wd_query(id, ...)
+  class(res) <- "wikidata"
+  return(res)
 }
 
 #'@rdname get_item
@@ -37,7 +39,9 @@ get_property <- function(id, ...){
     id <- paste0("Property:",id)
   }
   id <- check_input(id, "Property:P")
-  return(wd_query(id, ...))
+  res <- wd_query(id, ...)
+  class(res) <- "wikidata"
+  return(res)
 }
 
 #'@title Retrieve randomly-selected Wikidata items or properties
@@ -63,13 +67,17 @@ get_property <- function(id, ...){
 #'@rdname get_random
 #'@export
 get_random_item <- function(...){
-  return(wd_rand_query(0, ...))
+  res <- wd_rand_query(0, ...)
+  class(res) <- "wikidata"
+  return(res)
 }
 
 #'@rdname get_random
 #'@export
 get_random_property <- function(...){
-  return(wd_rand_query(120, ...))
+  res <- wd_rand_query(120, ...)
+  class(res) <- "wikidata"
+  return(res)
 }
 
 #'@title Search for Wikidata items or properties that match a search term
@@ -101,11 +109,15 @@ get_random_property <- function(...){
 #'@rdname find_item
 #'@export
 find_item <- function(search_term, language = "en", limit = 10, ...){
-  return(searcher(search_term, language, limit, "item"))
+  res <- searcher(search_term, language, limit, "item")
+  class(res) <- "find_item"
+  return(res)
 }
 
 #'@rdname find_item
 #'@export
 find_property <- function(search_term, language = "en", limit = 10){
-  return(searcher(search_term, language, limit, "property"))
+  res <- searcher(search_term, language, limit, "property")
+  class(res) <- "find_property"
+  return(res)
 }

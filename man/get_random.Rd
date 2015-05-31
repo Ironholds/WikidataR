@@ -15,7 +15,9 @@ get_random_property(...)
 }
 \description{
 \code{get_random_item} and \code{get_random_property} allow you to retrieve the data
-associated with randomly-selected Wikidata items and properties, respectively.
+associated with randomly-selected Wikidata items and properties, respectively. As with
+other \code{WikidataR} code, custom print methods are available; use \code{\link{str}}
+to manipulate and see the underlying structure of the data.
 }
 \examples{
 #Random item

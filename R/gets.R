@@ -1,6 +1,8 @@
 #'@title Retrieve specific Wikidata items or properties
 #'@description \code{get_item} and \code{get_property} allow you to retrieve the data associated
-#'with individual Wikidata items and properties, respectively.
+#'with individual Wikidata items and properties, respectively. As with
+#'other \code{WikidataR} code, custom print methods are available; use \code{\link{str}}
+#'to manipulate and see the underlying structure of the data.
 #'
 #'@param id the ID number of the item or property you're looking for. This can be in
 #'various formats; either a numeric value ("200"), the full name ("Q200") or
@@ -46,7 +48,9 @@ get_property <- function(id, ...){
 
 #'@title Retrieve randomly-selected Wikidata items or properties
 #'@description \code{get_random_item} and \code{get_random_property} allow you to retrieve the data
-#'associated with randomly-selected Wikidata items and properties, respectively.
+#'associated with randomly-selected Wikidata items and properties, respectively. As with
+#'other \code{WikidataR} code, custom print methods are available; use \code{\link{str}}
+#'to manipulate and see the underlying structure of the data.
 #'
 #'@param ... arguments to pass to httr's GET.
 #'
@@ -83,7 +87,8 @@ get_random_property <- function(...){
 #'@title Search for Wikidata items or properties that match a search term
 #'@description \code{find_item} and \code{find_property} allow you to retrieve a set
 #'of Wikidata items or properties where the aliase or descriptions match a particular
-#'search term.
+#'search term.  As with other \code{WikidataR} code, custom print methods are available;
+#'use \code{\link{str}} to manipulate and see the underlying structure of the data.
 #'
 #'@param search_term a term to search for.
 #'

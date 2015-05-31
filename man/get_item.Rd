@@ -19,7 +19,9 @@ it appropriately.}
 }
 \description{
 \code{get_item} and \code{get_property} allow you to retrieve the data associated
-with individual Wikidata items and properties, respectively.
+with individual Wikidata items and properties, respectively. As with
+other \code{WikidataR} code, custom print methods are available; use \code{\link{str}}
+to manipulate and see the underlying structure of the data.
 }
 \examples{
 #Retrieve a specific item

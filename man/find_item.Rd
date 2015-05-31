@@ -22,7 +22,8 @@ consist of an ISO language code. Set to "en" by default.}
 \description{
 \code{find_item} and \code{find_property} allow you to retrieve a set
 of Wikidata items or properties where the aliase or descriptions match a particular
-search term.
+search term.  As with other \code{WikidataR} code, custom print methods are available;
+use \code{\link{str}} to manipulate and see the underlying structure of the data.
 }
 \examples{
 #Check for entries relating to Douglas Adams in some way

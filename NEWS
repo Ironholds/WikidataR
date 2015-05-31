@@ -1,5 +1,6 @@
 # WikidataR 0.2.0
 * Fix a bug in get\_\* functions due to a parameter name mismatch
+* Print methods added by Christian Graul
 
 # WikidataR 0.1.0
 

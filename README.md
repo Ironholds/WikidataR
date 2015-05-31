@@ -19,7 +19,7 @@ Installation
 For the most recent version:
 
     library(devtools)
-    devtools::install_github("ironholds/WikidataR",ref="0.5.0")
+    devtools::install_github("ironholds/WikidataR",ref="1.0.0")
     
 For the development version:
 

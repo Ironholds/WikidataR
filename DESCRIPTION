@@ -1,12 +1,11 @@
 Package: WikidataR
 Type: Package
-Title: API Client Library for Wikidata
+Title: API Client Library for 'Wikidata'
 Version: 1.0.0
 Date: 2015-05-31
 Author: Oliver Keyes [aut, cre], Christian Graul [ctb]
 Maintainer: Oliver Keyes <ironholds@gmail.com>
-Description: A wrapper around the WikipediR MediaWiki API client library aimed
-  at the Wikidata semantic data store.
+Description: An API client library for the 'Wikidata' store of semantic data.
 License: MIT + file LICENSE
 Imports: 
   httr,

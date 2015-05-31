@@ -5,7 +5,7 @@ Version: 1.0.0
 Date: 2015-05-31
 Author: Oliver Keyes [aut, cre], Christian Graul [ctb]
 Maintainer: Oliver Keyes <ironholds@gmail.com>
-Description: An API client library for the 'Wikidata' store of semantic data.
+Description: An API client for the 'Wikidata' store of semantic data.
 License: MIT + file LICENSE
 Imports: 
   httr,

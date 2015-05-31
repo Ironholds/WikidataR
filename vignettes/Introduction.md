@@ -19,7 +19,8 @@ Items and properties are both identified by numeric IDs, prefaced with "Q" in th
 and "P" in the case of properties. WikipediR can be used to retrieve items or properties with specific
 ID numbers, using the <code>get\_item</code> and <code>get\_property</code> functions:
 
-```{r, eval=FALSE}
+
+```r
 #Retrieve an item 
 item <- get_item(id = 1)
 
@@ -35,7 +36,8 @@ for items, and "Property:P100", "P100" or "100" for properties.
 As well as retrieving specific items or properties, Wikidata's API also allows for the retrieval of *random*
 elements. With WikidataR, this can be achieved through:
 
-```{r, eval=FALSE}
+
+```r
 #Retrieve a random item
 rand_item <- get_random_item()
 
@@ -48,7 +50,8 @@ Wikidata's search functionality can also be used, either to find items or to fin
 a search string (which is run over the names and descriptions of items or properties) and a language code
 (since Wikidata's descriptions can be in many languages):
 
-```{r, eval=FALSE}
+
+```r
 #Find item - find defaults to "en" as a language.
 aarons <- find_item("Aaron Halfaker")
 
@@ -59,7 +62,8 @@ first_names <- find_property("first name")
 The resulting search entries have the ID as a key, making it trivial to then retrieve the full corresponding
 items or properties:
 
-```{r, eval=FALSE}
+
+```r
 #Find item.
 all_aarons <- find_item("Aaron Halfaker")
 

@@ -6,6 +6,7 @@ Date: 2015-05-31
 Author: Oliver Keyes [aut, cre], Christian Graul [ctb]
 Maintainer: Oliver Keyes <ironholds@gmail.com>
 Description: An API client for the 'Wikidata' (http://wikidata.org/) store of semantic data.
+BugReports: https://github.com/Ironholds/WikidataR/issues
 License: MIT + file LICENSE
 Imports: 
   httr,

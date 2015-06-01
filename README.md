@@ -5,7 +5,9 @@ An R API wrapper for the Wikidata store of semantic data.
 
 __Author:__ Oliver Keyes & Christian Graul<br/> 
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
-__Status:__ In development
+__Status:__ Stable
+
+![downloads](http://cranlogs.r-pkg.org/badges/grand-total/WikidataR)
 
 Description
 ======
@@ -16,10 +18,9 @@ vignette](https://github.com/Ironholds/WikidataR/blob/master/vignettes/Introduct
 Installation
 ======
 
-For the most recent version:
+For the most recent CRAN version:
 
-    library(devtools)
-    devtools::install_github("ironholds/WikidataR",ref="1.0.0")
+    install.packages("WikidataR")
     
 For the development version:
 

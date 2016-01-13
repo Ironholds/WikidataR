@@ -1,5 +1,7 @@
 #'@title Print method for find_item
 #'
+#'@description print found items.
+#'
 #'@param x find_item object with search results
 #'@param \dots Arguments to be passed to methods
 #'
@@ -27,6 +29,8 @@ print.find_item <- function(x, ...) {
 
 #'@title Print method for find_property
 #'
+#'@description print found properties.
+#'
 #'@param x find_property object with search results
 #'@param \dots Arguments to be passed to methods
 #'
@@ -53,6 +57,8 @@ print.find_property <- function(x, ...) {
 }
 
 #'@title Print method for Wikidata objects
+#'
+#'@description print found objects generally.
 #'
 #'@param x wikidata object from get_item, get_random_item, get_property or get_random_property
 #'@param \dots Arguments to be passed to methods

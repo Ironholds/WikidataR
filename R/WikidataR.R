@@ -1,4 +1,7 @@
 #' @title API client library for Wikidata
+#' @description This package serves as an API client for \href{Wikidata}{https://www.wikidata.org}.
+#' See the accompanying vignette for more details.
+#' 
 #' @name WikidataR
 #' @docType package
 #'@seealso \code{\link{get_random}} for selecting a random item or property,

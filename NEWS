@@ -1,3 +1,6 @@
+# WikidataR 1.0.1
+* Various documentation and metadata improvements.
+
 # WikidataR 1.0.0
 * Fix a bug in get\_\* functions due to a parameter name mismatch
 * Print methods added by Christian Graul

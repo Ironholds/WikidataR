@@ -4,17 +4,17 @@ wd_query <- function(title, ...){
                          user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
                          ...)
   result <- result$parse$wikitext[[1]]
-  result <- fromJSON(result)
+  result <- jsonlite::fromJSON(result)
   return(result)
 }
 
 #Query for a random item in "namespace" (ns). Essentially a wrapper around WikipediR::random_page.
 wd_rand_query <- function(ns, ...){
   result <- random_page(domain = "wikidata.org", as_wikitext = TRUE, namespaces = ns,
-                        user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
+                        httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
                         ...)
   result <- result$parse$wikitext[[1]]
-  result <- fromJSON(result)
+  result <- jsonlite::fromJSON(result)
   return(result)
   
 }

@@ -1,9 +1,9 @@
 <!--
 %\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{urltools}
+%\VignetteIndexEntry{Introduction to WikidataR}
 -->
 
-# The API client library for Wikidata
+# WikidataR: the API client library for Wikidata
 Wikidata is a wonderful and irreplaceable resource for linked data, containing information on pretty much any subject. If there's a Wikipedia article on it, there's almost certainly a Wikidata item for it.
 
 <code>WikidataR</code> - following the naming scheme of [WikipediR](https://github.com/Ironholds/WikipediR#thanks-and-misc) - is an API client library for Wikidata, written in and accessible from R.
@@ -69,6 +69,4 @@ first_aaron <- get_item(aall_aarons[[1]]$id)
 
 ## Other and future functionality
 If you have ideas for other types of useful Wikidata access, the best approach
-is to either [request it](https://github.com/Ironholds/WikidataR/issues) or [add it](https://github.com/Ironholds/WikidataR/pulls)! (Planned) future work includes integrating with Magnus's Wikidata API, giving the user more control
-over what's returned.
-
+is to either [request it](https://github.com/Ironholds/WikidataR/issues) or [add it](https://github.com/Ironholds/WikidataR/pulls)!

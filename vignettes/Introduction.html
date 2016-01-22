@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>The API client library for Wikidata</title>
+<title>WikidataR: the API client library for Wikidata</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -203,10 +203,10 @@ hr {
 <body>
 <!--
 %\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{urltools}
+%\VignetteIndexEntry{Introduction to WikidataR}
 -->
 
-<h1>The API client library for Wikidata</h1>
+<h1>WikidataR: the API client library for Wikidata</h1>
 
 <p>Wikidata is a wonderful and irreplaceable resource for linked data, containing information on pretty much any subject. If there&#39;s a Wikipedia article on it, there&#39;s almost certainly a Wikidata item for it.</p>
 
@@ -268,14 +268,13 @@ items or properties:</p>
 all_aarons &lt;- find_item(&quot;Aaron Halfaker&quot;)
 
 #Grab the ID code for the first entry and retrieve the associated item data.
-first_aaron &lt;- get_item(aall_aarons[[1]]$id)
+first_aaron &lt;- get_item(all_aarons[[1]]$id)
 </code></pre>
 
 <h2>Other and future functionality</h2>
 
 <p>If you have ideas for other types of useful Wikidata access, the best approach
-is to either <a href="https://github.com/Ironholds/WikidataR/issues">request it</a> or <a href="https://github.com/Ironholds/WikidataR/pulls">add it</a>! (Planned) future work includes integrating with Magnus&#39;s Wikidata API, giving the user more control
-over what&#39;s returned.</p>
+is to either <a href="https://github.com/Ironholds/WikidataR/issues">request it</a> or <a href="https://github.com/Ironholds/WikidataR/pulls">add it</a>!</p>
 
 </body>
 

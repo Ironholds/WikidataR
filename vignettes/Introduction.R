@@ -25,5 +25,5 @@
 #  all_aarons <- find_item("Aaron Halfaker")
 #  
 #  #Grab the ID code for the first entry and retrieve the associated item data.
-#  first_aaron <- get_item(aall_aarons[[1]]$id)
+#  first_aaron <- get_item(all_aarons[[1]]$id)
 

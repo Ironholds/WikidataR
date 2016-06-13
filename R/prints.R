@@ -56,19 +56,9 @@ print.find_property <- function(x, ...) {
   }
 }
 
-#'@title Print method for Wikidata objects
-#'
-#'@description print found objects generally.
-#'
-#'@param x wikidata object from get_item, get_random_item, get_property or get_random_property
-#'@param \dots Arguments to be passed to methods
-#'@seealso get_item, get_random_item, get_property or get_random_property
-#'@method print wikidata
-#'@export
-print.wikidata <- function(x, ...) {
-  
+print_wikidata_internal <- function(x, ...){
   cat("\n\tWikidata", x$type, x$id, "\n\n")
-  	
+  
   # labels
   num.labels <- length(x$labels)
   if(num.labels>0) {
@@ -97,12 +87,26 @@ print.wikidata <- function(x, ...) {
       cat("Description:", desc, paste0("\t[", num.desc-1, " other languages available]\n"))
     }
   }
-  	
+  
   # num claims
   num.claims <- length(x$claims)
   if(num.claims>0) cat("Claims:\t\t", num.claims, "\n")
-
+  
   # num sitelinks
   num.links <- length(x$sitelinks)
   if(num.links>0) cat("Sitelinks:\t", num.links, "\n")
+}
+
+#'@title Print method for Wikidata objects
+#'
+#'@description print found objects generally.
+#'
+#'@param x wikidata object from get_item, get_random_item, get_property or get_random_property
+#'@param \dots Arguments to be passed to methods
+#'@seealso get_item, get_random_item, get_property or get_random_property
+#'@method print wikidata
+#'@export
+print.wikidata <- function(x, ...) {
+  lapply(x, print_wikidata_internal)
+  return(invisible())
 }

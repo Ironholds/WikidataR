@@ -248,6 +248,15 @@ rand_item &lt;- get_random_item()
 rand_prop &lt;- get_random_property()
 </code></pre>
 
+<p>These also allow you to retrieve <em>sets</em> of random elements - not just one at a time, but say, 50 at a time - by including the &ldquo;limit&rdquo; argument:</p>
+
+<pre><code class="r">#Retrieve 42 random items
+rand_item &lt;- get_random_item(limit = 42)
+
+#Retrieve 42 random properties
+rand_prop &lt;- get_random_property(limit = 42)
+</code></pre>
+
 <h2>Search</h2>
 
 <p>Wikidata&#39;s search functionality can also be used, either to find items or to find properties. All you need is

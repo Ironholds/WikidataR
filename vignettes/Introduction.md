@@ -45,6 +45,17 @@ rand_item <- get_random_item()
 rand_prop <- get_random_property()
 ```
 
+These also allow you to retrieve *sets* of random elements - not just one at a time, but say, 50 at a time - by including the "limit" argument:
+
+
+```r
+#Retrieve 42 random items
+rand_item <- get_random_item(limit = 42)
+
+#Retrieve 42 random properties
+rand_prop <- get_random_property(limit = 42)
+```
+
 ## Search
 Wikidata's search functionality can also be used, either to find items or to find properties. All you need is
 a search string (which is run over the names and descriptions of items or properties) and a language code

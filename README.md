@@ -15,6 +15,8 @@ WikidataR is a wrapper around the Wikidata API. It is written in and for R, and 
 [rwikidata](https://github.com/chgrl/rwikidata) project. For details on how to best use it, see the [explanatory
 vignette](https://cran.r-project.org/web/packages/WikidataR/vignettes/Introduction.html).
 
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 Installation
 ======
 
@@ -30,5 +32,5 @@ For the development version:
 Dependencies
 ======
 * R. Doy.
-* [httr](http://cran.r-project.org/web/packages/httr/index.html) and its dependencies.
-* [WikipediR](https://github.com/Ironholds/WikipediR)
+* [httr](https://cran.r-project.org/package=httr) and its dependencies.
+* [WikipediR](https://cran.r-project.org/package=WikipediR)

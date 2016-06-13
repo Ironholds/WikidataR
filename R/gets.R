@@ -29,9 +29,7 @@
 #'@export
 get_item <- function(id, ...){
   id <- check_input(id, "Q")
-  res <- wd_query(id, ...)
-  class(res) <- "wikidata"
-  return(res)
+  return(wd_query(id, ...))
 }
 
 #'@rdname get_item
@@ -41,9 +39,7 @@ get_property <- function(id, ...){
     id <- paste0("Property:",id)
   }
   id <- check_input(id, "Property:P")
-  res <- wd_query(id, ...)
-  class(res) <- "wikidata"
-  return(res)
+  return(wd_query(id, ...))
 }
 
 #'@title Retrieve randomly-selected Wikidata items or properties
@@ -51,6 +47,8 @@ get_property <- function(id, ...){
 #'associated with randomly-selected Wikidata items and properties, respectively. As with
 #'other \code{WikidataR} code, custom print methods are available; use \code{\link{str}}
 #'to manipulate and see the underlying structure of the data.
+#'
+#'@param limit how many random items to return. 1 by default, but can be higher.
 #'
 #'@param ... arguments to pass to httr's GET.
 #'
@@ -70,18 +68,14 @@ get_property <- function(id, ...){
 #'@aliases get_random get_random_item get_random_property
 #'@rdname get_random
 #'@export
-get_random_item <- function(...){
-  res <- wd_rand_query(0, ...)
-  class(res) <- "wikidata"
-  return(res)
+get_random_item <- function(limit = 1, ...){
+  return(wd_rand_query(ns = 0, limit = limit, ...))
 }
 
 #'@rdname get_random
 #'@export
-get_random_property <- function(...){
-  res <- wd_rand_query(120, ...)
-  class(res) <- "wikidata"
-  return(res)
+get_random_property <- function(limit = 1, ...){
+  return(wd_rand_query(ns = 120, limit = limit, ...))
 }
 
 #'@title Search for Wikidata items or properties that match a search term

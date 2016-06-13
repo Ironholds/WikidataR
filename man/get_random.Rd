@@ -6,11 +6,13 @@
 \alias{get_random_property}
 \title{Retrieve randomly-selected Wikidata items or properties}
 \usage{
-get_random_item(...)
+get_random_item(limit = 1, ...)
 
-get_random_property(...)
+get_random_property(limit = 1, ...)
 }
 \arguments{
+\item{limit}{how many random items to return. 1 by default, but can be higher.}
+
 \item{...}{arguments to pass to httr's GET.}
 }
 \description{

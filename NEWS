@@ -1,3 +1,6 @@
+# WikidataR 1.1.0
+* You can now retrieve multiple random properties or items with get_random_item and get_random_property
+
 # WikidataR 1.0.1
 * Various documentation and metadata improvements.
 

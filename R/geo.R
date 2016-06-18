@@ -67,7 +67,6 @@ get_geo_entity <- function(entity, language = "en", radius = NULL, ...){
   if(is.null(radius)){
     query <- paste0("SELECT DISTINCT ?item ?name ?coord ?propertyLabel WHERE {
                       ?item wdt:P131* wd:", entity, ". ?item wdt:P625 ?coord .
-                      ?item wdt:P31 ?property .
                       SERVICE wikibase:label {
                         bd:serviceParam wikibase:language \"", language, "\" .
                         ?item rdfs:label ?name

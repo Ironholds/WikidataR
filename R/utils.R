@@ -22,8 +22,9 @@ wd_rand_query <- function(ns, limit, ...){
 #Generic input checker. Needs additional stuff for property-based querying
 #because namespaces are weird, yo.
 check_input <- function(input, substitution){
-  if(grepl("^\\d+$",input)){
-    input <- paste0(substitution,input)
+  in_fit <- grepl("^\\d+$",input)
+  if(any(in_fit)){
+    input[in_fit] <- paste0(substitution, input[in_fit])
   }
   return(input)
 }
@@ -37,11 +38,12 @@ searcher <- function(search_term, language, limit, type, ...){
   return(result)
 }
 
+#'@importFrom utils URLencode
 sparql_query <- function(params, ...){
   url <- paste0("https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=", params)
-  result <- httr::GET(URLencode(url), httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
+  result <- httr::GET(utils::URLencode(url), httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
                       ...)
   httr::stop_for_status(result)
-  output <- httr::content(result, as = "parsed", type = "application/json")
+  return(httr::content(result, as = "parsed", type = "application/json"))
 }
 

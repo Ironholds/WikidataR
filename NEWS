@@ -1,3 +1,8 @@
+# WikidataR 1.2.0 [WIP]
+* geographic data for entities that exist relative to other Wikidata items can now be retrieved
+with get_geo_entity and get_geo_box, courtesy of excellent Serena Signorelli's excellent
+QueryWikidataR package.
+
 # WikidataR 1.1.0
 * You can now retrieve multiple random properties or items with get_random_item and get_random_property
 

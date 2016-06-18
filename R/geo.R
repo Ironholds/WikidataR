@@ -43,8 +43,7 @@ get_geo_entity <- function(entity, radius = NULL, ...){
                     } ORDER BY ASC (?name)")
   }
   if(length(query) > 1){
-    return(lapply(query, function(x, radius, ...){ return(sparql_query(x, radius, ...)$results$bindings)},
-                  radius = radius, ...))
+    return(lapply(query, function(x, ...){ return(sparql_query(x, ...)$results$bindings)},...))
   }
   return(sparql_query(query)$results$bindings)
 }

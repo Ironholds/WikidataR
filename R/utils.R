@@ -36,3 +36,12 @@ searcher <- function(search_term, language, limit, type, ...){
   result <- result$search
   return(result)
 }
+
+sparql_query <- function(params, ...){
+  url <- paste0("https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=", params)
+  result <- httr::GET(URLencode(url), httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
+                      ...)
+  httr::stop_for_status(result)
+  output <- httr::content(result, as = "parsed", type = "application/json")
+}
+

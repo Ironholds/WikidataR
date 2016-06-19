@@ -11,18 +11,20 @@ print.find_item <- function(x, ...) {
   cat("\n\tWikidata item search\n\n")
 	
   # number of results
-  num.results <- length(x)
-  cat("Number of results:\t", num.results, "\n\n")
+  num_results <- length(x)
+  cat("Number of results:\t", num_results, "\n\n")
 		
   # results
-  if(num.results>0) {
+  if(num_results > 0) {
     cat("Results:\n")
-    for(i in 1:num.results) {
-      label <- x[[i]]$label
-      id <- x[[i]]$id
-      if(is.null(x[[i]]$description)) desc <- "\n"
-      else desc <- paste("-", x[[i]]$description, "\n")
-      cat(i, "\t", label, paste0("(", id, ")"), desc)
+    for(i in 1:num_results) {
+      if(is.null(x[[i]]$description)){
+        desc <- "\n"
+      }
+      else {
+        desc <- paste("-", x[[i]]$description, "\n")
+      }
+      cat(i, "\t", x[[i]]$label, paste0("(", x[[i]]$id, ")"), desc)
     }
   }
 }
@@ -40,18 +42,20 @@ print.find_property <- function(x, ...) {
   cat("\n\tWikidata property search\n\n")
 	
   # number of results
-  num.results <- length(x)
-  cat("Number of results:\t", num.results, "\n\n")
+  num_results <- length(x)
+  cat("Number of results:\t", num_results, "\n\n")
 		
   # results
-  if(num.results>0) {
+  if(num_results > 0) {
     cat("Results:\n")
-    for(i in 1:num.results) {
-      label <- x[[i]]$label
-      id <- x[[i]]$id
-      if(is.null(x[[i]]$description)) desc <- "\n"
-      else desc <- paste("-", x[[i]]$description, "\n")
-      cat(i, "\t", label, paste0("(", id, ")"), desc)
+    for(i in seq_len(num_results)) {
+      if(is.null(x[[i]]$description)){
+        desc <- "\n"
+      }
+      else {
+        desc <- paste("-", x[[i]]$description, "\n")
+      }
+      cat(i, "\t", x[[i]]$label, paste0("(", x[[i]]$id, ")"), desc)
     }
   }
 }
@@ -80,28 +84,36 @@ print.wikidata <- function(x, ...){
   }
   
   # aliases
-  num.alias <- length(x$aliases)
-  if(num.alias>0) {
-    al <- unique(unlist(lapply(x$aliases,function(xl) xl$value)))
-    cat("Aliases:\t", paste(al, collapse=", "), "\n")
+  num_aliases <- length(x$aliases)
+  if(num_aliases > 0) {
+    al <- unique(unlist(lapply(x$aliases, function(xl){return(xl$value)})))
+    cat("Aliases:\t", paste(al, collapse = ", "), "\n")
   }
   
   # descriptions
-  num.desc <- length(x$descriptions)
-  if(num.desc>0) {
+  num_desc <- length(x$descriptions)
+  if(num_desc > 0) {
     desc <- x$descriptions[[1]]$value
-    if(num.desc==1) cat("Description:", desc, "\n")
+    if(num_desc == 1){
+      cat("Description:", desc, "\n")
+    }
     else {
-      if(!is.null(x$descriptions$en)) desc <- x$descriptions$en$value
-      cat("Description:", desc, paste0("\t[", num.desc-1, " other languages available]\n"))
+      if(!is.null(x$descriptions$en)){
+        desc <- x$descriptions$en$value
+      }
+      cat("Description:", desc, paste0("\t[", (num_desc - 1), " other languages available]\n"))
     }
   }
   
   # num claims
-  num.claims <- length(x$claims)
-  if(num.claims>0) cat("Claims:\t\t", num.claims, "\n")
+  num_claims <- length(x$claims)
+  if(num_claims > 0){
+    cat("Claims:\t\t", num_claims, "\n")
+  }
   
   # num sitelinks
-  num.links <- length(x$sitelinks)
-  if(num.links>0) cat("Sitelinks:\t", num.links, "\n")
+  num_links <- length(x$sitelinks)
+  if(num_links > 0){
+    cat("Sitelinks:\t", num_links, "\n")
+  }
 }

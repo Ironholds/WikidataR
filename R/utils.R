@@ -31,17 +31,23 @@ check_input <- function(input, substitution){
 
 #Generic, direct access to Wikidata's search functionality.
 searcher <- function(search_term, language, limit, type, ...){
-  url <- paste0("wikidata.org/w/api.php?action=wbsearchentities&format=json&type=",type)
-  url <- paste0(url, "&language=", language, "&limit=", limit, "&search=", search_term)
-  result <- WikipediR::query(url = url, out_class = "list", clean_response = FALSE, ...)
+  result <- WikipediR::query(url = "https://wikidata.org/w/api.php", out_class = "list", clean_response = FALSE,
+                             query_param = list(
+                               action   = "wbsearchentities", 
+                               type     = type,
+                               language = language,
+                               limit    = limit,
+                               search   = search_term
+                             ),
+                             ...)
   result <- result$search
   return(result)
 }
 
-#'@importFrom utils URLencode
 sparql_query <- function(params, ...){
-  url <- paste0("https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=", params)
-  result <- httr::GET(utils::URLencode(url), httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
+  result <- httr::GET("https://query.wikidata.org/bigdata/namespace/wdq/sparql",
+                      query = list(query = params),
+                      httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
                       ...)
   httr::stop_for_status(result)
   return(httr::content(result, as = "parsed", type = "application/json"))

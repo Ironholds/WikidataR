@@ -31,7 +31,7 @@ check_input <- function(input, substitution){
 
 #Generic, direct access to Wikidata's search functionality.
 searcher <- function(search_term, language, limit, type, ...){
-  result <- WikipediR::query(url = "https://wikidata.org/w/api.php", out_class = "list", clean_response = FALSE,
+  result <- WikipediR::query(url = "http://wikidata.org/w/api.php", out_class = "list", clean_response = FALSE,
                              query_param = list(
                                action   = "wbsearchentities", 
                                type     = type,

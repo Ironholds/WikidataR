@@ -4,13 +4,10 @@
 \alias{get_geo_box}
 \title{Get geographic entities based on a bounding box}
 \usage{
-get_geo_box(city, first_city_code, first_corner, second_city_code,
-  second_corner, language = "en", ...)
+get_geo_box(first_city_code, first_corner, second_city_code, second_corner,
+  language = "en", ...)
 }
 \arguments{
-\item{city}{a Wikidata item (\code{Q...}) or series of items, to centre
-the bounding box on.}
-
 \item{first_city_code}{a Wikidata item, or series of items, to use for
 one corner of the bounding box.}
 
@@ -42,14 +39,16 @@ a data.frame of 5 columns:
 }
 }
 \description{
-flarghle
+\code{get_geo_box} retrieves all geographic entities in
+Wikidata that fall between a bounding box between two existing items
+with geographic attributes (usually cities).
 }
 \examples{
 # Simple bounding box
-bruges_box <- WikidataR:::get_geo_box("Q12994", "Q12988", "NorthEast", "Q184287", "SouthWest")
+bruges_box <- WikidataR:::get_geo_box("Q12988", "NorthEast", "Q184287", "SouthWest")
 
 # Custom language
-bruges_box_fr <- WikidataR:::get_geo_box("Q12994", "Q12988", "NorthEast", "Q184287", "SouthWest",
+bruges_box_fr <- WikidataR:::get_geo_box("Q12988", "NorthEast", "Q184287", "SouthWest",
                                         language = "fr")
 
 }

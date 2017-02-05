@@ -33,26 +33,16 @@ testthat::test_that("multi-entity geo lookups work", {
 })
 
 testthat::test_that("Simple bounding lookups work", {
-  field_names <- c("item", "name", "latitutde", "longitude", "entity")
-  bruges_box <- get_geo_box("Q12994", "Q12988", "NorthEast", "Q184287", "SouthWest")
+  field_names <- c("item", "name", "latitutde", "longitude")
+  bruges_box <- get_geo_box("Q12988", "NorthEast", "Q184287", "SouthWest")
   testthat::expect_true(is.data.frame(bruges_box))
   testthat::expect_true(all(field_names == names(bruges_box)))
-  testthat::expect_true(unique(bruges_box$entity) == "Q12994")
 })
 
 testthat::test_that("Language-variant bounding lookups work", {
-  field_names <- c("item", "name", "latitutde", "longitude", "entity")
-  bruges_box <- get_geo_box("Q12994", "Q12988", "NorthEast", "Q184287", "SouthWest",
+  field_names <- c("item", "name", "latitutde", "longitude")
+  bruges_box <- get_geo_box("Q12988", "NorthEast", "Q184287", "SouthWest",
                             language = "fr")
   testthat::expect_true(is.data.frame(bruges_box))
   testthat::expect_true(all(field_names == names(bruges_box)))
-  testthat::expect_true(unique(bruges_box$entity) == "Q12994")
-})
-
-testthat::test_that("multi-entity bounding lookups work", {
-  field_names <- c("item", "name", "latitutde", "longitude", "entity")
-  bruges_box <- get_geo_box(c("Q12994","Q184287"), "Q12988", "NorthEast", "Q184287", "SouthWest")
-  testthat::expect_true(is.data.frame(bruges_box))
-  testthat::expect_true(all(field_names == names(bruges_box)))
-  testthat::expect_equal(length(unique(bruges_box$entity)), 2)
 })

@@ -106,10 +106,9 @@ get_geo_entity <- function(entity, language = "en", radius = NULL, ...){
 }
 
 #'@title Get geographic entities based on a bounding box
-#'@description flarghle
-#'
-#'@param city a Wikidata item (\code{Q...}) or series of items, to centre
-#'the bounding box on.
+#'@description \code{get_geo_box} retrieves all geographic entities in
+#'Wikidata that fall between a bounding box between two existing items
+#'with geographic attributes (usually cities).
 #'
 #'@param first_city_code a Wikidata item, or series of items, to use for
 #'one corner of the bounding box.
@@ -142,21 +141,20 @@ get_geo_entity <- function(entity, language = "en", radius = NULL, ...){
 #'
 #'@examples
 #'# Simple bounding box
-#'bruges_box <- WikidataR:::get_geo_box("Q12994", "Q12988", "NorthEast", "Q184287", "SouthWest")
+#'bruges_box <- WikidataR:::get_geo_box("Q12988", "NorthEast", "Q184287", "SouthWest")
 #'
 #'# Custom language
-#'bruges_box_fr <- WikidataR:::get_geo_box("Q12994", "Q12988", "NorthEast", "Q184287", "SouthWest",
+#'bruges_box_fr <- WikidataR:::get_geo_box("Q12988", "NorthEast", "Q184287", "SouthWest",
 #'                                         language = "fr")
 #'
 #'@seealso \code{\link{get_geo_entity}} for using an unrestricted search or simple radius,
 #'rather than a bounding box.
 #'
 #'@export
-get_geo_box <- function(city, first_city_code, first_corner, second_city_code, second_corner,
+get_geo_box <- function(first_city_code, first_corner, second_city_code, second_corner,
                         language = "en", ...){
   
   # Input checks
-  city <- check_input(city, "Q")
   first_city_code <- check_input(first_city_code, "Q")
   second_city_code <- check_input(second_city_code, "Q")
   
@@ -177,13 +175,11 @@ get_geo_box <- function(city, first_city_code, first_corner, second_city_code, s
   
   # Vectorise if necessary, or not if not!
   if(length(query) > 1){
-    return(do.call("rbind", mapply(function(query, city, ...){
+    return(do.call("rbind", mapply(function(query, ...){
       output <- clean_geo(sparql_query(query, ...)$results$bindings)
-      output$entity <- city
       return(output)
-    }, query = query, city = city, ..., SIMPLIFY = FALSE)))
+    }, query = query, ..., SIMPLIFY = FALSE)))
   }
   output <- clean_geo(sparql_query(query)$results$bindings)
-  output$entity <- city
   return(output)
 }

@@ -7,7 +7,7 @@ __Author:__ Oliver Keyes & Christian Graul<br/>
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
 __Status:__ Stable
 
-![downloads](http://cranlogs.r-pkg.org/badges/grand-total/WikidataR)
+[![Travis-CI Build Status](https://travis-ci.org/Ironholds/WikidataR.svg?branch=master)](https://travis-ci.org/Ironholds/WikidataR)![downloads](http://cranlogs.r-pkg.org/badges/grand-total/WikidataR)
 
 Description
 ======

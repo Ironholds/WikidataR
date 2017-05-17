@@ -1,3 +1,6 @@
+# WikidataR 1.3.0
+* get_* functions are now vectorised
+
 # WikidataR 1.2.0
 * geographic data for entities that exist relative to other Wikidata items can now be retrieved
 with get_geo_entity and get_geo_box, courtesy of excellent Serena Signorelli's excellent

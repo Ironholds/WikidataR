@@ -4,10 +4,11 @@
 #'other \code{WikidataR} code, custom print methods are available; use \code{\link{str}}
 #'to manipulate and see the underlying structure of the data.
 #'
-#'@param id the ID number of the item or property you're looking for. This can be in
+#'@param id the ID number(s) of the item or property you're looking for. This can be in
 #'various formats; either a numeric value ("200"), the full name ("Q200") or
 #'even with an included namespace ("Property:P10") - the function will format
-#'it appropriately.
+#'it appropriately. This function is vectorised and will happily accept
+#'multiple IDs.
 #'
 #'@param ... further arguments to pass to httr's GET.
 #'
@@ -29,17 +30,21 @@
 #'@export
 get_item <- function(id, ...){
   id <- check_input(id, "Q")
-  return(wd_query(id, ...))
+  output <- (lapply(id, wd_query, ...))
+  class(output) <- "wikidata"
+  return(output)
 }
 
 #'@rdname get_item
 #'@export
 get_property <- function(id, ...){
-  if(grepl("^P(?!r)",id, perl = TRUE)){
-    id <- paste0("Property:",id)
-  }
+  has_grep <- grepl("^P(?!r)",id, perl = TRUE)
+  id[has_grep] <- paste0("Property:", id[has_grep])
   id <- check_input(id, "Property:P")
-  return(wd_query(id, ...))
+  
+  output <- (lapply(id, wd_query, ...))
+  class(output) <- "wikidata"
+  return(output)
 }
 
 #'@title Retrieve randomly-selected Wikidata items or properties

@@ -4,7 +4,6 @@ wd_query <- function(title, ...){
                                     httr::user_agent("WikidataR - https://github.com/Ironholds/WikidataR"),
                                     ...)
   output <- jsonlite::fromJSON(result$parse$wikitext[[1]])
-  class(output) <- "wikidata"
   return(output)
 }
 

@@ -2,7 +2,7 @@ Package: WikidataR
 Type: Package
 Title: API Client Library for 'Wikidata'
 Version: 1.3.0
-Date: 2017-02-04
+Date: 2017-05-17
 Author: Oliver Keyes [aut, cre], Serena Signorelli [aut, cre],
         Christian Graul [ctb]
 Maintainer: Oliver Keyes <ironholds@gmail.com>

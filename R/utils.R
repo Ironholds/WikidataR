@@ -52,3 +52,39 @@ sparql_query <- function(params, ...){
   return(httr::content(result, as = "parsed", type = "application/json"))
 }
 
+#'@title Extract Claims from Returned Item Data
+#'@description extract claim information from data returned using
+#'\code{\link{get_item}}.
+#'
+#'@param items a list of one or more Wikidata items returned with
+#'\code{\link{get_item}}.
+#'
+#'@param claims a vector of claims (in the form "P321", "P12") to look for
+#'and extract.
+#'
+#'@return a list containing one sub-list for each entry in \code{items},
+#'and (below that) the found data for each claim. In the event a claim
+#'cannot be found for an item, an \code{NA} will be returned
+#'instead.
+#'
+#'@examples
+#'# Get item data
+#'adams_data <- get_item("42")
+#'
+#'# Get claim data
+#'claims <- extract_claims(adams_data, "P31")
+#'
+#'@export
+extract_claims <- function(items, claims){
+  output <- lapply(items, function(x, claims){
+    return(lapply(claims, function(claim, obj){
+      which_match <- which(names(obj$claims) == claim)
+      if(!length(which_match)){
+        return(NA)
+      }
+      return(obj$claims[[which_match[1]]])
+    }, obj = x))
+  }, claims = claims)
+  
+  return(output)
+}

@@ -56,4 +56,3 @@ bruges_box_fr <- WikidataR:::get_geo_box("Q12988", "NorthEast", "Q184287", "Sout
 \code{\link{get_geo_entity}} for using an unrestricted search or simple radius,
 rather than a bounding box.
 }
-

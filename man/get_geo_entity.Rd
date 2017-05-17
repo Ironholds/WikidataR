@@ -56,4 +56,3 @@ multi_entity <- get_geo_entity(entity = c("Q62", "Q64"))
 \code{\link{get_geo_box}} for using a bounding box
 rather than an unrestricted search or simple radius.
 }
-

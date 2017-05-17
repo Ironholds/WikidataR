@@ -17,4 +17,3 @@ print found objects generally.
 \seealso{
 get_item, get_random_item, get_property or get_random_property
 }
-

@@ -30,7 +30,7 @@ first_claim <- get_property(id = names(item$claims)[1])
 ```
 
 These functions are capable of accepting various forms for the ID, including (as examples), "Q100" or "100"
-for items, and "Property:P100", "P100" or "100" for properties.
+for items, and "Property:P100", "P100" or "100" for properties. They're also vectorised - pass them as many IDs as you want!
 
 ## Retrieving randomly-selected items or properties
 As well as retrieving specific items or properties, Wikidata's API also allows for the retrieval of *random*

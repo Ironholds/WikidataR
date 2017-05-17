@@ -3,6 +3,7 @@
 \name{find_item}
 \alias{find_item}
 \alias{find_property}
+\alias{find_property}
 \title{Search for Wikidata items or properties that match a search term}
 \usage{
 find_item(search_term, language = "en", limit = 10, ...)
@@ -38,4 +39,3 @@ peerage_props <- find_property("peerage")
 \code{\link{get_random}} for selecting a random item or property,
 or \code{\link{get_item}} for selecting a specific item or property.
 }
-

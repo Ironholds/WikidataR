@@ -4,6 +4,7 @@
 \name{WikidataR}
 \alias{WikidataR}
 \alias{WikidataR-package}
+\alias{WikidataR-package}
 \title{API client library for Wikidata}
 \description{
 This package serves as an API client for \href{Wikidata}{https://www.wikidata.org}.
@@ -15,4 +16,3 @@ See the accompanying vignette for more details.
 for using search functionality to pull out item or property IDs where the descriptions
 or aliases match a particular search term.
 }
-

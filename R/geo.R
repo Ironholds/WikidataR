@@ -71,9 +71,6 @@ get_geo_entity <- function(entity, language = "en", radius = NULL, ...){
                         bd:serviceParam wikibase:language \"", language, "\" .
                         ?item rdfs:label ?name
                       }
-                      SERVICE wikibase:label {
-                        bd:serviceParam wikibase:language \"en\"
-                      }
                     }
                     ORDER BY ASC (?name)")
   } else {

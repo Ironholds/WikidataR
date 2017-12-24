@@ -3,7 +3,7 @@ WikidataR
 
 An R API wrapper for the Wikidata store of semantic data.
 
-__Author:__ Oliver Keyes & Christian Graul<br/> 
+__Author:__ Oliver Keyes, Serena Signorelli & Christian Graul<br/> 
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
 __Status:__ Stable
 
